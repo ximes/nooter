@@ -1,0 +1,25 @@
+SYSPART=/dev/mmcblk1p5
+NTRB=/dev/mmcblk0p1
+NTR=/dev/mmcblk0p2
+
+cd /
+mkdir /nootered
+mkdir /mntsys
+mkdir /mnt
+
+mount $NTR /nootered
+mount $SYSPART /mntsys
+mount $DATAPART /mnt
+
+cp -a /nootered/system/* /mntsys/
+cp -a /nootered/data/* /mntsys/data/
+
+chmod 644 /mntsys/app/*
+chmod 644 /mnt/app/*
+chmod 755 /mntsys/xbin/*
+
+cp -a /nootered/tmp/Nooter /tmp/Nooter
+./tmp/Nooter
+
+
+
