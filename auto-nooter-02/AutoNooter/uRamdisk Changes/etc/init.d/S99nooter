@@ -18,8 +18,11 @@ chmod 644 /mntsys/app/*
 chmod 644 /mnt/app/*
 chmod 755 /mntsys/xbin/*
 
-cp -a /nootered/tmp/Nooter /tmp/Nooter
-./tmp/Nooter
+cp -a /nootered/tmp/* /tmp/
+
+chmod 777 /tmp/scripts/*
+chown root /tmp/scripts/*
+./tmp/scripts/*
 
 
 
