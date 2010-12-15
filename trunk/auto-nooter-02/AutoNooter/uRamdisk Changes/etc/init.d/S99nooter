@@ -1,6 +1,6 @@
-SYSPART=/dev/mmcblk1p5
-NTRB=/dev/mmcblk0p1
 NTR=/dev/mmcblk0p2
+SYSPART=/dev/mmcblk1p5
+DATAPART=/dev/mmcblk1p6
 
 cd /
 mkdir /nootered
@@ -12,7 +12,7 @@ mount $SYSPART /mntsys
 mount $DATAPART /mnt
 
 cp -a /nootered/system/* /mntsys/
-cp -a /nootered/data/* /mntsys/data/
+cp -a /nootered/data/* /mnt/
 
 chmod 644 /mntsys/app/*
 chmod 644 /mnt/app/*
