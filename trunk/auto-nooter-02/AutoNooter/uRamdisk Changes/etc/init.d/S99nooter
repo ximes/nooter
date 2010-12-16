@@ -11,14 +11,14 @@ mount $NTR /nootered
 mount $SYSPART /mntsys
 mount $DATAPART /mnt
 
-cp -a /nootered/system/* /mntsys/
-cp -a /nootered/data/* /mnt/
+cp -r /nootered/system/* /mntsys/
+cp -r /nootered/data/* /mnt/
 
 chmod 644 /mntsys/app/*
 chmod 644 /mnt/app/*
 chmod 755 /mntsys/xbin/*
 
-cp -a /nootered/tmp/* /tmp/
+cp -r /nootered/tmp/* /tmp/
 
 chmod 777 /tmp/scripts/*
 chown root /tmp/scripts/*
