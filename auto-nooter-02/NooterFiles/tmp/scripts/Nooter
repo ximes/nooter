@@ -13,6 +13,9 @@ chmod 4775 /mntsys/bin/su
 cd /mntsys
 sed -i '/nocheckin/d' build.prop
 echo "ro.config.nocheckin=no" >> build.prop
+sed -i 's/abi=armeabi$/abi=armeabi-v7a/' build.prop
+sed -i '/cpu.abi2/d' build.prop
+echo "ro.product.cpu.abi2=armeabi" >> build.prop
 sed -i 's/^.*ro.build.fingerprint.*$/ro\.build\.fingerprint=verizon\/voles\/sholes\/sholes:2\.1-update1\/ESE81\/29593:user\/release-keys/' build.prop
 
 cd /mnt/system
