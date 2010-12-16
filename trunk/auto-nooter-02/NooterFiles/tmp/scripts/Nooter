@@ -16,7 +16,7 @@ echo "ro.config.nocheckin=no" >> build.prop
 sed -i 's/^.*ro.build.fingerprint.*$/ro\.build\.fingerprint=verizon\/voles\/sholes\/sholes:2\.1-update1\/ESE81\/29593:user\/release-keys/' build.prop
 
 cd /mnt/system
-sed -i '1,/uid.system/!{ /<perms>/,/uid.system/!d; }' packages.xml
+sed -i '/uid.system/,/perms/{/uid.system/b;/perms/b;d}' packages.xml
 
 
 
