@@ -26,6 +26,7 @@ sed -i 's/^.*ro.build.fingerprint.*$/ro\.build\.fingerprint=verizon\/voles\/shol
 
 cd /mnt/system
 sed -i '/uid.system/,/perms/{/uid.system/b;/perms/b;d}' packages.xml
+rm /system/app/YouTube.apk
 
 umount /nootered
 umount /mntsys
