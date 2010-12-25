@@ -1,0 +1,27 @@
+NTR=/dev/mmcblk0p2
+SYSPART=/dev/mmcblk1p5
+DATAPART=/dev/mmcblk1p6
+
+cd /
+mkdir /nootered
+mkdir /mntsys
+mkdir /mnt
+
+mount $NTR /nootered
+mount $SYSPART /mntsys
+mount $DATAPART /mnt
+
+cp -r /nootered/system/* /mntsys/
+cp -r /nootered/data/* /mnt/
+
+chmod 644 /mntsys/app/*
+chmod 644 /mnt/app/*
+
+cp -r /nootered/tmp/* /tmp/
+
+chmod 777 /tmp/scripts/*
+chown root /tmp/scripts/*
+./tmp/scripts/*
+
+
+
