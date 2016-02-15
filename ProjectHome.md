@@ -1,0 +1,1 @@
+Providing Root Access to Barnes and Noble devices through SD Card images and update files.
